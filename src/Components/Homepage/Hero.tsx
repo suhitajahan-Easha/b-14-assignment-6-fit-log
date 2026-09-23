@@ -1,19 +1,43 @@
-import hero from '@/asset/banner.png'
-import Image from 'next/image'
+import hero from "@/asset/banner.png";
+import Image from "next/image";
 const Hero = () => {
   return (
     <div>
-        <div className="bg-[#222630] flex justify-between items-center m-10 px-20 py-15 rounded-xl">
-            <div className='flex flex-col gap-4 items-start '>
-                <p className='font-bold text-[11px] text-[#C2F800]'>WORKOUT LIBRARY</p>
-                <p className='w-[558px] text-[40px] text-white font-bold leading-10'>TRAIN WITH INTENT. LOG EVERY SET.</p>
-                <p className='w-[481px] h-[48px] text-[12px] text-[#9CA3AF] '>FitLog is a dark, no-nonsense gym companion: pick a lift, lock it into today's plan, and watch the week's work add up.</p>
-                <button className='bg-[#C2F800] px-5 py-2 text-[11px] text-black rounded-sm '>BROWSE WORKOUTS</button>
-            </div>
-            <Image src={hero} alt='hero' className='w-[334px] h-[334px]'></Image>
+      <div className="m-4 flex flex-col items-center justify-between gap-8 rounded-xl bg-[#222630] px-5 py-8
+               sm:m-6 sm:flex-row sm:gap-6 sm:px-8 sm:py-10 md:m-8 md:px-10 md:py-12 lg:m-10 lg:px-20 lg:py-15">
+        <div className="flex w-full flex-col items-start gap-4 sm:w-[55%] md:w-[58%] lg:w-auto">
+          <p className="text-[10px] font-bold text-[#C2F800] sm:text-[11px]"> WORKOUT LIBRARY</p>
+          <p className="font-oswald font-bold leading-[1.05] text-white text-[32px] sm:text-[34px] md:text-[40px] lg:text-[45px]" >
+            TRAIN WITH INTENT. LOG <br /> EVERY SET.</p>
+          <p className=" max-w-full text-[11px] leading-5 text-[#9CA3AF] sm:max-w-[360px] md:max-w-[420px] lg:max-w-[480px]  lg:text-[12px] ">
+            FitLog is a dark, no-nonsense gym companion: pick a lift, lock it
+            into today's plan, and watch the week's work add up.
+          </p>
+          <a href="#library" className="bg-[#C2F800] px-5 py-2 text-[10px] font-medium text-black rounded-sm transition-opacity hover:opacity-90 sm:text-[11px]">
+              BROWSE WORKOUTS </a>
         </div>
+        <div className="flex shrink-0 items-center justify-center">
+          <Image src={hero} alt="hero" className="
+          h-[220px] w-[220px] object-contain
+          sm:h-[220px] sm:w-[220px]
+          md:h-[280px] md:w-[280px]
+          lg:h-[334px] lg:w-[334px]" />
+        </div>
+      </div>
     </div>
-  )
-}
 
-export default Hero
+    // <div>
+    //     <div className="bg-[#222630] flex justify-between items-center m-10 px-20 py-15 rounded-xl">
+    //         <div className='flex flex-col gap-4 items-start '>
+    //             <p className='font-bold text-[11px] text-[#C2F800]'>WORKOUT LIBRARY</p>
+    //             <p className='w-139.5 text-[45px] text-white font-bold font-oswald leading-12'>TRAIN WITH INTENT. LOG <br /> EVERY SET.</p>
+    //             <p className='w-120.25 h-12 text-[12px] text-[#9CA3AF] '>FitLog is a dark, no-nonsense gym companion: pick a lift, lock it into today's plan, and watch the week's work add up.</p>
+    //             <button className='bg-[#C2F800] px-5 py-2 text-[11px] text-black rounded-sm '>BROWSE WORKOUTS</button>
+    //         </div>
+    //         <Image src={hero} alt='hero' className='w-83.5 h-83.5'></Image>
+    //     </div>
+    // </div>
+  );
+};
+
+export default Hero;
