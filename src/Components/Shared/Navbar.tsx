@@ -42,18 +42,21 @@ const Navbar = () => {
           </Link>
         </div>
         <div className="flex shrink-0 items-center gap-1.5 text-[11px] sm:gap-2 sm:text-xs lg:gap-3 lg:text-base">
-          <button className="flex items-center gap-1 sm:gap-2">
-            <span>Plan</span>
-            <span className="flex h-5 w-5 items-center justify-center rounded-full bg-[#ccff00] text-[11px] font-bold text-black sm:h-6 sm:w-6 sm:text-xs">
-              0
-            </span>
-          </button>
-          <button className="flex items-center gap-1 sm:gap-2">
-            <span>Saved</span>
-            <span className="flex h-5 w-5 items-center justify-center rounded-full border text-[11px] font-bold sm:h-6 sm:w-6 sm:text-xs">
-              0
-            </span>
-          </button>
+          <Link href="/my-plan" className="flex items-center gap-1 sm:gap-2">
+               <span>Plan</span>
+               <span className="flex h-5 w-5 items-center justify-center rounded-full bg-[#ccff00] text-[11px] font-bold text-black sm:h-6 sm:w-6 sm:text-xs">
+                 0
+               </span>
+             
+          </Link>
+          <Link href="/my-plan"  className="flex items-center gap-1 sm:gap-2">
+              
+                <span>Saved</span>
+                <span className="flex h-5 w-5 items-center justify-center rounded-full border text-[11px] font-bold sm:h-6 sm:w-6 sm:text-xs">
+                  0
+                </span>
+              
+          </Link>
         </div>
       </nav>
     </div>
