@@ -28,11 +28,8 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable } ${oswald.variable} h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col">
+    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} ${oswald.variable} h-full antialiased dark`}>
+      <body className="min-h-full flex flex-col bg-[#0B0D10] text-white">
          <ContextApi>
           <Navbar></Navbar>
           {children}
