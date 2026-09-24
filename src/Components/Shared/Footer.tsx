@@ -4,11 +4,11 @@ import logo from '@/asset/logo.png'
 
 const Footer = () => {
   return (
-    <div className="max-w-300 mx-auto container  mt-10 mb-5">
+    <div className="max-w-300 mx-auto container mt-20 mb-6">
         <footer className="flex justify-between items-center">
             <div className="flex shrink-0 items-center gap-1.5 sm:gap-2">
                 <Image src={logo} alt="logo"
-                        className="h-[18px] w-[18px] sm:h-[20px] sm:w-[20px] lg:h-[22px] lg:w-[22px]"/>
+                        className="h-4.5 w-4.5 sm:h-5 sm:w-5 lg:h-5.5 lg:w-5.5"/>
                 <h1 className="text-[14px] font-bold text-white sm:text-[16px] lg:text-[18px]"> FITLOG</h1>
             </div>
             <p className="text-[11px] text-[#9CA3AF]">© 2026 FitLog — Workout Library. Train hard, log honest.</p>

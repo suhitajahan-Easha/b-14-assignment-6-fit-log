@@ -9,7 +9,7 @@ const Hero = () => {
           <p className="text-[10px] font-bold text-[#C2F800] sm:text-[11px]"> WORKOUT LIBRARY</p>
           <p className="font-oswald font-bold leading-[1.05] text-white text-[32px] sm:text-[34px] md:text-[40px] lg:text-[45px]" >
             TRAIN WITH INTENT. LOG <br /> EVERY SET.</p>
-          <p className=" max-w-full text-[11px] leading-5 text-[#9CA3AF] sm:max-w-[360px] md:max-w-[420px] lg:max-w-[480px]  lg:text-[12px] ">
+          <p className=" max-w-full text-[11px] leading-5 text-[#9CA3AF] sm:max-w-90 md:max-w-105 lg:max-w-120  lg:text-[12px] ">
             FitLog is a dark, no-nonsense gym companion: pick a lift, lock it
             into today's plan, and watch the week's work add up.
           </p>
@@ -18,10 +18,10 @@ const Hero = () => {
         </div>
         <div className="flex shrink-0 items-center justify-center">
           <Image src={hero} alt="hero" className="
-          h-[220px] w-[220px] object-contain
-          sm:h-[220px] sm:w-[220px]
-          md:h-[280px] md:w-[280px]
-          lg:h-[334px] lg:w-[334px]" />
+          h-55 w-55 object-contain
+          sm:h-55 sm:w-55
+          md:h-70 md:w-70
+          lg:h-83.5 lg:w-83.5" />
         </div>
       </div>
     </div>

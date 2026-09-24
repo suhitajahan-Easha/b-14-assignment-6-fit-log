@@ -18,7 +18,7 @@ const Detailspage = async ({ params }: { params: Promise<{ id: string }> }) => {
           <Image
             src={fit.image}
             alt={fit.name}
-            className="flex-1 w-[600px] h-[600px]
+            className="flex-1 w-150 h-150
                   rounded-xl"
             width={500}
             height={400}

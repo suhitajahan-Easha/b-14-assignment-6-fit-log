@@ -13,7 +13,7 @@ const Navbar = () => {
           <Image
             src={logo}
             alt="logo"
-            className="h-[18px] w-[18px] sm:h-[20px] sm:w-[20px] lg:h-[22px] lg:w-[22px]"
+            className="h-4.5 w-4.5 sm:h-5 sm:w-5 lg:h-5.5 lg:w-5.5"
           />
           <h1 className="text-[14px] font-bold text-white sm:text-[16px] lg:text-[18px]">
             FITLOG
