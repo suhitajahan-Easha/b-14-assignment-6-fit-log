@@ -22,9 +22,9 @@ const FitCard = ({ fit }: { fit: ExerciseType }) => {
                 <hr className="w-[90%] text-center text-gray-600 my-5" />
 
                 <ul className="flex justify-start items-center gap-5 pb-6 text-xs text-[#9CA3AF]">
-                    <li className="flex gap-1 justify-center"><PiTimerLight className="text-sm" />{fit.duration} min</li>
-                    <li className="flex gap-1 justify-center"><LuLoaderPinwheel className="text-sm" />{fit.caloriesBurned} kcal</li>
-                    <li className="flex gap-1 justify-center"><CiStar className="text-sm" />{fit.rating}</li>
+                    <li className="flex gap-1 justify-center"><PiTimerLight className="text-sm text-[#C2F800]" />{fit.duration} min</li>
+                    <li className="flex gap-1 justify-center"><LuLoaderPinwheel className="text-sm text-[#C2F800]" />{fit.caloriesBurned} kcal</li>
+                    <li className="flex gap-1 justify-center"><CiStar className="text-sm text-[#C2F800]" />{fit.rating}</li>
                 </ul>
             </div>
         </div>

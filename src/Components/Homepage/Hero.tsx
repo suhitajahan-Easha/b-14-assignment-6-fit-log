@@ -2,9 +2,10 @@ import hero from "@/asset/banner.png";
 import Image from "next/image";
 const Hero = () => {
   return (
-    <div>
+    <div className="lg:my-20">
+      
       <div className="m-4 flex flex-col items-center justify-between gap-8 rounded-xl bg-[#222630] px-5 py-8
-               sm:m-6 sm:flex-row sm:gap-6 sm:px-8 sm:py-10 md:m-8 md:px-10 md:py-12 lg:m-10 lg:px-20 lg:py-15">
+               sm:m-6 sm:flex-row sm:gap-6 sm:px-8 sm:py-10 md:m-8 md:px-10 md:py-12 lg:m-10 lg:px-10 lg:py-15 lg:max-w-300 lg:mx-auto lg:container ">
         <div className="flex w-full flex-col items-start gap-4 sm:w-[55%] md:w-[58%] lg:w-auto">
           <p className="text-[10px] font-bold text-[#C2F800] sm:text-[11px]"> WORKOUT LIBRARY</p>
           <p className="font-oswald font-bold leading-[1.05] text-white text-[32px] sm:text-[34px] md:text-[40px] lg:text-[45px]" >
@@ -27,6 +28,8 @@ const Hero = () => {
     </div>
 
     // <div>
+    //
+    //
     //     <div className="bg-[#222630] flex justify-between items-center m-10 px-20 py-15 rounded-xl">
     //         <div className='flex flex-col gap-4 items-start '>
     //             <p className='font-bold text-[11px] text-[#C2F800]'>WORKOUT LIBRARY</p>

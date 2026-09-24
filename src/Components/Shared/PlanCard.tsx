@@ -2,19 +2,26 @@
 import { Context } from "@/Context/ContextApi"
 import { ExerciseType } from "@/Type/Type"
 import Image from "next/image"
-import { useContext } from "react"
+import { useContext, useState } from "react"
 import { PiTimerLight } from "react-icons/pi";
 import { LuLoaderPinwheel } from "react-icons/lu";
 import { CiStar } from "react-icons/ci";
 import Link from "next/link"
+import { RxCross2 } from "react-icons/rx";
+import { toast } from "react-toastify"
 
 const PlanCard = ({fit}:{fit:ExerciseType}) => {
 
     const {plan,setPlan}=useContext(Context)
-  
-
+    const [isDone, setIsDone] = useState(false);
+    
+      const handleDone = () => {
+        setIsDone(true);
+        toast.success("Workout completed!");
+      };
  const handlePlan=(id:number)=>{
     const filtered=plan.filter((p:ExerciseType)=>p.id!==id)
+    toast.success("Removed Succesfully")
     return setPlan(filtered)
  } 
   return (
@@ -33,11 +40,12 @@ const PlanCard = ({fit}:{fit:ExerciseType}) => {
             </div>
             <div className="flex justify-start items-center gap-4 ">
                 <Link href={`/Allfit/${fit.id}`}>
-                  <button  className='border border-gray-600 px-6 py-2 text-[11px] text-white rounded-xl  
-                     items-center '> View Details</button> 
+                  <button  className='border border-gray-600 px-6 py-2 text-[11px] text-white rounded-xl items-center '> View Details</button> 
                 </Link>
-              <button onClick={()=>handlePlan(fit.id)} className='bg-[#C2F800] px-6 py-2 text-[11px] text-black rounded-xl  '>
-                       Mark as Done</button>  
+                {!isDone && (
+                <button onClick={handleDone} className="bg-[#C2F800] px-6 py-2 text-[11px] text-black rounded-xl">
+                      Mark as Done </button>)}
+              <RxCross2 className="text-white" onClick={()=>handlePlan(fit.id)} />  
             </div>
           </div>
   )

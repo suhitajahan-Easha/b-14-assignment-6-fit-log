@@ -3,12 +3,15 @@ import Image from "next/image";
 import logo from "@/asset/logo.png";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { Context } from '@/Context/ContextApi'
+import { useContext } from 'react'
 
 const Navbar = () => {
   const pathname = usePathname();
+  const {save,plan}=useContext(Context)
   return (
-    <div>
-      <nav className="flex items-center justify-between gap-2 border-b border-[#9CA3AF] px-3 py-3 text-[#9CA3AF] sm:px-5 sm:py-4 md:px-7 lg:px-10 lg:py-5">
+    <div className="border-b border-[#9CA3AF]"> 
+      <nav className="flex items-center justify-between gap-2  lg:max-w-300 lg:mx-auto lg:container  px-3 py-3 text-[#9CA3AF] sm:px-5 sm:py-4 md:px-7 lg:px-0 lg:py-5">
         <div className="flex shrink-0 items-center gap-1.5 sm:gap-2">
           <Image
             src={logo}
@@ -45,15 +48,14 @@ const Navbar = () => {
           <Link href="/my-plan" className="flex items-center gap-1 sm:gap-2">
                <span>Plan</span>
                <span className="flex h-5 w-5 items-center justify-center rounded-full bg-[#ccff00] text-[11px] font-bold text-black sm:h-6 sm:w-6 sm:text-xs">
-                 0
+                 {plan.length}
                </span>
              
           </Link>
           <Link href="/my-plan"  className="flex items-center gap-1 sm:gap-2">
-              
                 <span>Saved</span>
                 <span className="flex h-5 w-5 items-center justify-center rounded-full border text-[11px] font-bold sm:h-6 sm:w-6 sm:text-xs">
-                  0
+                  {save.length}
                 </span>
               
           </Link>

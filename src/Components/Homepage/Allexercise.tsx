@@ -7,7 +7,7 @@ const Allexercise = async () => {
   const allexercise = await dataFetch();
 
   return (
-    <div className="px-4 sm:px-6 md:px-8 lg:px-10" id="library">
+    <div className="px-4 sm:px-6 md:px-8 lg:px-0 lg:max-w-300 lg:mx-auto lg:container" id="library">
       <div className="flex flex-col gap-3">
         <h1 className="text-xl font-bold sm:text-2xl ">THE LIBRARY</h1>
         <p className="text-xs text-[#9CA3AF] sm:text-sm">
