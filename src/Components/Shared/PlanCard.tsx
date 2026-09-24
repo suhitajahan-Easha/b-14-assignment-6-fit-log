@@ -25,7 +25,7 @@ const PlanCard = ({fit}:{fit:ExerciseType}) => {
     return setPlan(filtered)
  } 
   return (
-    <div className="flex justify-between bg-[#111317] border border-gray-500 mb-3 px-4 py-3 rounded-xl ">
+    <div className="flex flex-col gap-6 sm:gap-0 sm:flex-row  sm:justify-between bg-[#111317] border border-gray-500 mb-3 px-4 py-3 rounded-xl ">
             <div className="flex justify-between items-center gap-3">
                 <Image src={fit.image} alt={fit.name} width={150} height={70} className="w-37.5 h-17.5 rounded-xl object-cover"  ></Image>
                 <div className="flex flex-col justify-center  gap-2 ">

@@ -18,7 +18,7 @@ const Hero = () => {
               BROWSE WORKOUTS </a>
         </div>
         <div className="flex shrink-0 items-center justify-center">
-          <Image src={hero} alt="hero" className="
+          <Image src={hero} alt="hero" loading="eager" className="
           h-55 w-55 object-contain
           sm:h-55 sm:w-55
           md:h-70 md:w-70

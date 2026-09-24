@@ -27,7 +27,7 @@ const SaveCard = ({ fit }: { fit: ExerciseType }) => {
     return setSave(filtered);
   };
   return (
-    <div className="flex justify-between bg-[#111317] border border-gray-500 mb-3 px-4 py-3 rounded-xl ">
+    <div className="flex flex-col gap-6 sm:gap-0 sm:flex-row  sm:justify-between bg-[#111317] border border-gray-500 mb-3 px-4 py-3 rounded-xl ">
       <div className="flex justify-between items-center gap-3">
         <Image
           src={fit.image}

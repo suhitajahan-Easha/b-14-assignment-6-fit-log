@@ -10,7 +10,9 @@ import { useContext, useState } from "react";
 const myplanpage = () => {
   const { plan, save } = useContext(Context);
 
-  const [sortby, setSortby] = useState<"rating" | "caloriesBurned" | "duration">("rating");
+  const [sortby, setSortby] = useState<
+    "rating" | "caloriesBurned" | "duration"
+  >("rating");
   const [activeTab, setActiveTab] = useState<"plan" | "save">("plan");
 
   const sortfit = (fit: ExerciseType[]) => {
@@ -29,11 +31,17 @@ const myplanpage = () => {
   const sortedplanfit = sortfit(plan);
   const sortedsavefit = sortfit(save);
   const activeExercises = activeTab === "plan" ? plan : save;
-  const totalMinutes = activeExercises.reduce((total, fit) => total + fit.duration, 0);
-  const totalCalories = activeExercises.reduce((total, fit) => total + fit.caloriesBurned, 0);
+  const totalMinutes = activeExercises.reduce(
+    (total, fit) => total + fit.duration,
+    0,
+  );
+  const totalCalories = activeExercises.reduce(
+    (total, fit) => total + fit.caloriesBurned,
+    0,
+  );
 
   return (
-    <div className="max-w-300 mx-auto container">
+    <div className="w-full px-4 sm:px-6 md:px-8 lg:container lg:mx-auto lg:max-w-300 lg:px-0">
       <div className="flex flex-col gap-2 mt-6">
         <h1 className="text-xl font-bold sm:text-2xl uppercase font-oswald ">
           My plan
@@ -42,11 +50,11 @@ const myplanpage = () => {
           Cap of five lifts for today. Finish them, then load more.
         </p>
       </div>
-      <div className="bg-[#222630] p-6 flex justify-start gap-80 my-6 rounded-xl">
+      <div className="my-6 flex justify-between gap-4 rounded-xl bg-[#222630] p-4 sm:gap-10 sm:p-5 md:gap-20 md:p-6 lg:justify-start lg:gap-80">
         <div>
           <h1 className="text-xs text-[#9CA3AF] sm:text-sm">Exercise</h1>
           <h2 className="text-xl text-[#C2F800] font-bold sm:text-2xl uppercase font-oswald">
-           {activeExercises.length}
+            {activeExercises.length}
           </h2>
         </div>
         <div>
@@ -62,16 +70,20 @@ const myplanpage = () => {
           </h2>
         </div>
       </div>
-      <div className="text-right -mb-12.5">
-        <select value={sortby} onChange={(e)=>
-          setSortby(e.target.value as "rating" | "caloriesBurned" | "duration")
-        }
-           className="select select-ghost ">
+      <div className="-mb-10 flex justify-end">
+        <select
+          value={sortby}
+          onChange={(e) =>
+            setSortby(
+              e.target.value as "rating" | "caloriesBurned" | "duration",
+            )
+          }
+          className="select select-ghost h-8 w-24 px-1 text-[10px] sm:h-9 sm:w-32 sm:px-2 sm:text-xs md:w-36 md:text-sm "
+        >
           <option disabled={true}>Sort By</option>
           <option value={"rating"}>Rating</option>
           <option value={"caloriesBurned"}>CaloriesBurned</option>
           <option value={"duration"}>duration</option>
-          
         </select>
       </div>
       <div className="tabs tabs-border mb-5">
@@ -81,7 +93,7 @@ const myplanpage = () => {
           className="tab  mb-5"
           aria-label="Today's Plan"
           checked={activeTab === "plan"}
-           onChange={() => setActiveTab("plan")}
+          onChange={() => setActiveTab("plan")}
         />
         <div className="tab-content ">
           {sortedplanfit.length > 0 ? (
@@ -130,12 +142,12 @@ const myplanpage = () => {
                 <Link href="/">
                   <button className="bg-[#C2F800] px-6 py-2 text-[11px] text-black rounded-xl">
                     Go to Workouts
-                  </button></Link>
+                  </button>
+                </Link>
               </div>
             </div>
           )}
         </div>
-
       </div>
     </div>
   );
