@@ -10,9 +10,7 @@ import { useContext, useState } from "react";
 const myplanpage = () => {
   const { plan, save } = useContext(Context);
 
-  const [sortby, setSortby] = useState<
-    "rating" | "caloriesBurned" | "duration"
-  >("rating");
+  const [sortby, setSortby] = useState< "rating" | "caloriesBurned" | "duration" >("duration");
   const [activeTab, setActiveTab] = useState<"plan" | "save">("plan");
 
   const sortfit = (fit: ExerciseType[]) => {
@@ -70,77 +68,69 @@ const myplanpage = () => {
           </h2>
         </div>
       </div>
-      <div className="-mb-10 flex justify-end">
-        <select
-          value={sortby}
-          onChange={(e) =>
+      <div className="-mb-10 flex items-center justify-end gap-1 ">
+        <h1 className="text-xs text-[#9CA3AF] sm:text-sm ">Sortby</h1>
+        <select value={sortby} onChange={(e) =>
             setSortby(
-              e.target.value as "rating" | "caloriesBurned" | "duration",
-            )
-          }
-          className="select select-ghost h-8 w-24 px-1 text-[10px] sm:h-9 sm:w-32 sm:px-2 sm:text-xs md:w-36 md:text-sm "
-        >
-          <option disabled={true}>Sort By</option>
-          <option value={"rating"}>Rating</option>
-          <option value={"caloriesBurned"}>CaloriesBurned</option>
-          <option value={"duration"}>duration</option>
+              e.target.value as "rating" | "caloriesBurned" | "duration", ) }
+          className="select select-ghost h-8 w-24 px-1 text-[10px]  sm:h-9 sm:w-32 sm:px-2 sm:text-xs md:w-30 md:text-sm " >
+          <option value={"rating"} className="text-xs text-[#9CA3AF] sm:text-sm"> Rating</option>
+          <option value={"caloriesBurned"} className="text-xs text-[#9CA3AF] sm:text-sm" > Calories</option>
+          <option value={"duration"} className="text-xs text-[#9CA3AF] sm:text-sm"> Duration</option>
         </select>
       </div>
-      <div className="tabs tabs-border mb-5">
-        <input
-          type="radio"
-          name="my_tabs_6"
-          className="tab  mb-5"
-          aria-label="Today's Plan"
-          checked={activeTab === "plan"}
-          onChange={() => setActiveTab("plan")}
-        />
-        <div className="tab-content ">
-          {sortedplanfit.length > 0 ? (
-            sortedplanfit.map((fit: ExerciseType) => {
-              return <PlanCard fit={fit} key={fit.id}></PlanCard>;
-            })
-          ) : (
-            <div className="flex justify-center items-center bg-[#111317] border border-gray-500 border-dashed mb-3 p-10 rounded-xl">
-              <div className="flex flex-col items-center justify-center">
-                <h1 className="text-[16px] font-oswald font-bold uppercase mb-2">
-                  Nothing here yet
-                </h1>
-                <p className="text-xs text-[#9CA3AF] mb-5 text-center">
-                  Browse the library and add a lift to get today moving.
-                </p>
-                <button className="bg-[#C2F800] px-6 py-2 text-[11px] text-black rounded-xl">
-                  Go to Workouts
-                </button>
-              </div>
-            </div>
-          )}
+      <div className="mb-5">
+        <div className="inline-flex items-center gap-1 rounded-xl border border-[#252A35] bg-[#111317] p-1">
+          <button
+            onClick={() => setActiveTab("plan")}
+            className={`rounded-lg px-4 py-1.5 text-xs font-medium transition-colors sm:px-5 sm:text-sm ${
+              activeTab === "plan"
+                ? "bg-[#222630] text-white shadow-sm"
+                : "text-[#9CA3AF]" }`} > Today's Plan
+          </button>
+          <button
+            onClick={() => setActiveTab("save")}
+            className={`rounded-lg px-4 py-1.5 text-xs font-medium transition-colors sm:px-5 sm:text-sm ${
+              activeTab === "save"
+                ? "bg-[#222630] text-white shadow-sm"
+                : "text-[#9CA3AF]"}`} > Saved
+          </button>
         </div>
-
-        <input
-          type="radio"
-          name="my_tabs_6"
-          className="tab  mb-5"
-          aria-label="Saved"
-          checked={activeTab === "save"}
-          onChange={() => setActiveTab("save")}
-        />
-        <div className="tab-content ">
-          {sortedsavefit.length > 0 ? (
+        <div className="mt-5">
+          {activeTab === "plan" ? (
+            sortedplanfit.length > 0 ? (
+              sortedplanfit.map((fit: ExerciseType) => {
+                return <PlanCard fit={fit} key={fit.id} />;
+              })
+            ) : (
+              <div className="flex items-center justify-center rounded-xl border border-dashed border-gray-500 bg-[#111317] p-10">
+                <div className="flex flex-col items-center justify-center">
+                  <h1 className="mb-2 text-[16px] font-oswald font-bold uppercase"> Nothing here yet </h1>
+                  <p className="mb-5 text-center text-xs text-[#9CA3AF]">
+                    Browse the library and add a lift to get today moving.
+                  </p>
+                  <Link href="/">
+                    <button className="rounded-xl bg-[#C2F800] px-6 py-2 text-[11px] text-black">
+                      Go to Workouts
+                    </button>
+                  </Link>
+                </div>
+              </div>
+            )
+          ) : sortedsavefit.length > 0 ? (
             sortedsavefit.map((fit: ExerciseType) => {
-              return <SaveCard fit={fit} key={fit.id}></SaveCard>;
+              return <SaveCard fit={fit} key={fit.id} />;
             })
           ) : (
-            <div className="flex justify-center items-center bg-[#111317] border border-gray-500 border-dashed mb-3 p-10 rounded-xl">
+            <div className="flex items-center justify-center rounded-xl border border-dashed border-gray-500 bg-[#111317] p-10">
               <div className="flex flex-col items-center justify-center">
-                <h1 className="text-[16px] font-oswald font-bold uppercase mb-2">
-                  Nothing here yet
+                <h1 className="mb-2 text-[16px] font-oswald font-bold uppercase"> Nothing here yet
                 </h1>
-                <p className="text-xs text-[#9CA3AF] mb-5 text-center">
+                <p className="mb-5 text-center text-xs text-[#9CA3AF]">
                   Browse the library and add a lift to get today moving.
                 </p>
                 <Link href="/">
-                  <button className="bg-[#C2F800] px-6 py-2 text-[11px] text-black rounded-xl">
+                  <button className="rounded-xl bg-[#C2F800] px-6 py-2 text-[11px] text-black">
                     Go to Workouts
                   </button>
                 </Link>

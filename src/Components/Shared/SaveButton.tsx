@@ -17,14 +17,21 @@ const SaveButton = ({fit}:{fit:ExerciseType}) => {
   );
 
     const handleclick=()=>{
-    setSave([...save,fit])
-    toast.success(`${fit.name} Saved Successfully`)
+        if(isSelected){
+            toast.error("Already in Save")
+            return
+        }
+
+        setSave([...save,fit])
+        toast.success(`${fit.name} Saved Successfully`)
 
 
 }
   return (
-     <button onClick={()=>handleclick()} disabled={isSelected} className='border border-gray-600 px-6 py-2 text-[11px] text-white rounded-xl flex justify-between 
-       items-center '> <CiBookmark className='mr-2 text-white text-sm' />Save For Later</button>   
+     <button onClick={handleclick} 
+        className="border 
+         border-gray-600 px-6 py-2 text-[11px] text-white rounded-xl flex justify-between 
+       items-center"> <CiBookmark className="mr-2 text-white text-sm" />Save For Later</button>   
   )
 }
 

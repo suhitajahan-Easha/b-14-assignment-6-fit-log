@@ -17,7 +17,7 @@ const PlanCard = ({fit}:{fit:ExerciseType}) => {
     
       const handleDone = () => {
         setIsDone(true);
-        toast.success("Workout completed!");
+        toast.success("Workout Done!");
       };
  const handlePlan=(id:number)=>{
     const filtered=plan.filter((p:ExerciseType)=>p.id!==id)
@@ -42,9 +42,8 @@ const PlanCard = ({fit}:{fit:ExerciseType}) => {
                 <Link href={`/Allfit/${fit.id}`}>
                   <button  className='border border-gray-600 px-6 py-2 text-[11px] text-white rounded-xl items-center '> View Details</button> 
                 </Link>
-                {!isDone && (
-                <button onClick={handleDone} className="bg-[#C2F800] px-6 py-2 text-[11px] text-black rounded-xl">
-                      Mark as Done </button>)}
+                <button onClick={handleDone} disabled={isDone} className="bg-[#C2F800] px-6 py-2 text-[11px] text-black rounded-xl">
+                     ✓ Mark as Done </button> 
               <RxCross2 className="text-white" onClick={()=>handlePlan(fit.id)} />  
             </div>
           </div>

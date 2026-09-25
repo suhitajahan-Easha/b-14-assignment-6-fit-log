@@ -2,7 +2,7 @@
 import { Context } from "@/Context/ContextApi";
 import { ExerciseType } from "@/Type/Type";
 import Image from "next/image";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { PiTimerLight } from "react-icons/pi";
 import { LuLoaderPinwheel } from "react-icons/lu";
 import { CiStar } from "react-icons/ci";
@@ -13,12 +13,7 @@ import { toast } from "react-toastify";
 
 const SaveCard = ({ fit }: { fit: ExerciseType }) => {
   const { save, setSave } = useContext(Context);
-  const [isDone, setIsDone] = useState(false);
-
-  const handleDone = () => {
-    setIsDone(true);
-    toast.success("Workout completed!");
-  };
+  
 
 
   const handleSave = (id: number) => {
@@ -64,10 +59,6 @@ const SaveCard = ({ fit }: { fit: ExerciseType }) => {
             View Details
           </button>
         </Link>
-        {!isDone && (
-        <button onClick={handleDone} className="bg-[#C2F800] px-6 py-2 text-[11px] text-black rounded-xl">
-          Mark as Done
-        </button>)}
         <RxCross2 className="text-white" onClick={() => handleSave(fit.id)} />
       </div>
     </div>

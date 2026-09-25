@@ -17,6 +17,10 @@ const PlanButton = ({fit}:{fit:ExerciseType}) => {
   );
 
     const handleclick=()=>{
+      if(isSelected){
+                  toast.error("Already in Plan")
+                  return
+              }
     setPlan([...plan,fit])
     toast.success(`${fit.name} Added Successfully`)
 
@@ -24,7 +28,7 @@ const PlanButton = ({fit}:{fit:ExerciseType}) => {
 }
   return (
      
-      <button onClick={()=>handleclick()} disabled={isSelected} className='bg-[#C2F800] px-6 py-2 text-[11px] text-black rounded-xl flex justify-between items-center '>
+      <button onClick={handleclick} className='bg-[#C2F800] px-6 py-2 text-[11px] text-black rounded-xl flex justify-between items-center '>
          <CiBookmark className='mr-2 text-sm' />Add To Today's Plan</button>  
   )
 }

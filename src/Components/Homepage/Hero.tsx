@@ -14,7 +14,7 @@ const Hero = () => {
             FitLog is a dark, no-nonsense gym companion: pick a lift, lock it
             into today's plan, and watch the week's work add up.
           </p>
-          <a href="#library" className="bg-[#C2F800] px-5 py-2 text-[10px] font-medium text-black rounded-sm transition-opacity hover:opacity-90 sm:text-[11px]">
+          <a href="#library" className="bg-[#C2F800] px-5 py-2 text-[10px] font-medium text-black rounded-xl mt-3 transition-opacity hover:opacity-90 sm:text-[11px]">
               BROWSE WORKOUTS </a>
         </div>
         <div className="flex shrink-0 items-center justify-center">

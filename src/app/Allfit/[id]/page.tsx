@@ -13,17 +13,17 @@ const Detailspage = async ({ params }: { params: Promise<{ id: string }> }) => {
   );
   return (
     <div>
-      <div className=" flex flex-col sm:flex-row justify-between items-center gap-2 lg:gap-6 mx-2 lg:max-w-300  lg:mx-auto lg:container my-7">
+      <div className=" w-full flex flex-col lg:flex-row justify-between items-center gap-0 md:gap-6  lg:max-w-300  lg:mx-auto lg:container my-7">
         <div>
           <Image
             src={fit.image}
             alt={fit.name}
-            className="w-90 h-100 rounded-xl object-cover sm:w-100 sm:h-110 md:w-110 md:h-120 lg:flex-1 lg:w-150 lg:h-150"
+            className="w-100 h-100 rounded-xl object-cover sm:h-130 md:w-110 md:h-120 lg:flex-1 lg:w-150 lg:h-150"
             width={500}
             height={400}
           ></Image>
         </div>
-        <div className="ml-7 flex-1">
+        <div className="mx-2 md:mx-2 lg:mx-0 lg:ml-7 flex-1">
           <h1 className="text-4xl uppercase font-oswald font-bold mb-2">
             {fit.name}
           </h1>
