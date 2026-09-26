@@ -12,7 +12,7 @@ const FitCard = ({ fit }: { fit: ExerciseType }) => {
            <div className="rounded-xl bg-[#222630] hover:border hover:border-[#ccff00] transition-all">
             <Image src={fit.image} alt={fit.name} width={400} height={200} className="w-full h-70 object-cover rounded-t-xl" />
             <div className="ml-7">
-                <h1 className="flex justify-start gap-3 py-6">
+                <h1 className="flex flex-wrap justify-start gap-3 py-6">
                     {fit.muscleGroups.map((p, i) => <div className="text-center" key={i}><p className="bg-[#ccff00] text-black w-25 p-1 rounded-xl">{p}</p></div>)}
                 </h1>
 
