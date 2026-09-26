@@ -4,8 +4,7 @@ A modern workout library and tracking application built for keeping gym workouts
 
 ## 🚀 Live Demo
 
-[FitLog Live Website](https://b-14-assignment-6-fit-log-theta.vercel.app/?utm_source=chatgpt.com)
-
+[FitLog Live Website](https://assignment-6-fit-log-phi.vercel.app/)
 ## 🛠️ Technologies Used
 
 * **Next.js** — React framework for building the application
