@@ -1,7 +1,7 @@
 import { ExerciseType } from "@/Type/Type";
 import Image from "next/image";
 import { PiTimerLight } from "react-icons/pi";
-import { LuLoaderPinwheel } from "react-icons/lu";
+import { LuFlame } from "react-icons/lu";
 import { CiStar } from "react-icons/ci";
 import Link from "next/link";
 
@@ -9,7 +9,7 @@ const FitCard = ({ fit }: { fit: ExerciseType }) => {
   return (
     <div>
       <Link href={`/Allfit/${fit.id}`}>
-           <div className="rounded-xl bg-[#222630]">
+           <div className="rounded-xl bg-[#222630] hover:border hover:border-[#ccff00] transition-all">
             <Image src={fit.image} alt={fit.name} width={400} height={200} className="w-full h-70 object-cover rounded-t-xl" />
             <div className="ml-7">
                 <h1 className="flex justify-start gap-3 py-6">
@@ -23,7 +23,7 @@ const FitCard = ({ fit }: { fit: ExerciseType }) => {
 
                 <ul className="flex justify-start items-center gap-5 pb-6 text-xs text-[#9CA3AF]">
                     <li className="flex gap-1 justify-center"><PiTimerLight className="text-sm text-[#C2F800]" />{fit.duration} min</li>
-                    <li className="flex gap-1 justify-center"><LuLoaderPinwheel className="text-sm text-[#C2F800]" />{fit.caloriesBurned} kcal</li>
+                    <li className="flex gap-1 justify-center"><LuFlame className="text-sm text-[#C2F800]" />{fit.caloriesBurned} kcal</li>
                     <li className="flex gap-1 justify-center"><CiStar className="text-sm text-[#C2F800]" />{fit.rating}</li>
                 </ul>
             </div>

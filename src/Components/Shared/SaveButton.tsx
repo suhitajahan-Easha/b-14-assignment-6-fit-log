@@ -23,7 +23,7 @@ const SaveButton = ({fit}:{fit:ExerciseType}) => {
         }
 
         setSave([...save,fit])
-        toast.success(`${fit.name} Saved Successfully`)
+        toast.success(`${fit.name} Added to Save`)
 
 
 }

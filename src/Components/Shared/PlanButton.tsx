@@ -22,7 +22,7 @@ const PlanButton = ({fit}:{fit:ExerciseType}) => {
                   return
               }
     setPlan([...plan,fit])
-    toast.success(`${fit.name} Added Successfully`)
+    toast.success(`${fit.name} Added to today's plan`)
 
 
 }

@@ -13,30 +13,34 @@ const Detailspage = async ({ params }: { params: Promise<{ id: string }> }) => {
   );
   return (
     <div>
-      <div className=" w-full flex flex-col lg:flex-row justify-between items-center gap-0 md:gap-6  lg:max-w-300  lg:mx-auto lg:container my-7">
-        <div>
+      <div className="my-7 flex w-full flex-col items-center justify-between gap-6 px-4 sm:px-6 md:px-8 lg:mx-auto lg:container lg:max-w-300 lg:flex-row lg:gap-2 lg:px-0">
+        <div className="w-full lg:w-auto">
           <Image
             src={fit.image}
             alt={fit.name}
-            className="w-100 h-100 rounded-xl object-cover sm:h-130 md:w-110 md:h-120 lg:flex-1 lg:w-150 lg:h-150"
             width={500}
             height={400}
-          ></Image>
+            className="h-auto w-full rounded-xl object-cover sm:h-100 md:h-110 lg:h-150 lg:w-150"
+          />
         </div>
-        <div className="mx-2 md:mx-2 lg:mx-0 lg:ml-7 flex-1">
-          <h1 className="text-4xl uppercase font-oswald font-bold mb-2">
+
+        <div className="w-full flex-1 lg:ml-7">
+          <h1 className="mb-2 font-oswald text-3xl font-bold uppercase sm:text-4xl">
             {fit.name}
           </h1>
-          <p className="text-[#9CA3AF] text-sm">{fit.description}</p>
-          <h1 className="flex justify-start gap-3 py-6">
+
+          <p className="text-sm text-[#9CA3AF]">{fit.description}</p>
+
+          <h1 className="flex flex-wrap justify-start gap-2 py-6 sm:gap-3">
             {fit.muscleGroups.map((p, i) => (
               <div className="text-center" key={i}>
-                <p className="bg-[#ccff00] text-black w-25 p-1 rounded-xl">
+                <p className="w-25 rounded-xl bg-[#ccff00] p-1 text-black">
                   {p}
                 </p>
               </div>
             ))}
           </h1>
+
           <div className="overflow-hidden rounded-xl bg-[#222630] text-[10px] text-white">
             <table className="w-full">
               <tbody>
@@ -49,29 +53,34 @@ const Detailspage = async ({ params }: { params: Promise<{ id: string }> }) => {
                   ["caloriesBurned", fit.caloriesBurned],
                   ["rating", fit.rating],
                 ].map(([label, value], i) => (
-                  <tr key={label} className={i !== 6 ? "border-b border-gray-600" : ""}>
-                    <td className="px-5 py-2 uppercase text-[#9CA3AF]"> {label}</td>
+                  <tr
+                    key={label}
+                    className={i !== 6 ? "border-b border-gray-600" : ""}
+                  >
+                    <td className="px-5 py-2 uppercase text-[#9CA3AF]">
+                      {label}
+                    </td>
                     <td className="px-5 py-2 text-right">{value}</td>
                   </tr>
                 ))}
               </tbody>
             </table>
           </div>
-          
+
           <div>
-            <h1 className="text-[16px] uppercase mt-5 mb-2">Instructions</h1>
+            <h1 className="mb-2 mt-5 text-[16px] uppercase">Instructions</h1>
             <ol className="ml-5 list-decimal">
               {fit.instructions.map((p, i) => (
-                <li className="text-sm text-[#9CA3AF] mb-2" key={i}>
-                  {" "}
+                <li className="mb-2 text-sm text-[#9CA3AF]" key={i}>
                   {p}
                 </li>
               ))}
             </ol>
           </div>
-          <div className="flex justify-start items-center gap-4 mt-10">
-            <PlanButton fit={fit}></PlanButton>
-            <SaveButton fit={fit}></SaveButton>
+
+          <div className="mt-10 flex flex-wrap items-center justify-start gap-3 sm:gap-4">
+            <PlanButton fit={fit} />
+            <SaveButton fit={fit} />
           </div>
         </div>
       </div>

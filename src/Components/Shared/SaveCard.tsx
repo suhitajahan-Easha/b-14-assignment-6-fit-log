@@ -4,7 +4,7 @@ import { ExerciseType } from "@/Type/Type";
 import Image from "next/image";
 import { useContext } from "react";
 import { PiTimerLight } from "react-icons/pi";
-import { LuLoaderPinwheel } from "react-icons/lu";
+import { LuFlame } from "react-icons/lu";
 import { CiStar } from "react-icons/ci";
 import Link from "next/link";
 import { RxCross2 } from "react-icons/rx";
@@ -42,7 +42,7 @@ const SaveCard = ({ fit }: { fit: ExerciseType }) => {
               {fit.duration} min
             </li>
             <li className="flex gap-1 justify-center">
-              <LuLoaderPinwheel className="text-sm text-[#C2F800]" />
+              <LuFlame className="text-sm text-[#C2F800]" />
               {fit.caloriesBurned} kcal
             </li>
             <li className="flex gap-1 justify-center">
