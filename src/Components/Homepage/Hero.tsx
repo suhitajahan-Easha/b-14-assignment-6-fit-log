@@ -9,7 +9,7 @@ const Hero = () => {
                sm:m-6 sm:flex-row sm:gap-6 sm:px-8 sm:py-10 md:m-8 md:px-10 md:py-12 lg:m-10 lg:px-10 lg:py-15 lg:max-w-300 lg:mx-auto lg:container ">
         <div className="flex w-full flex-col items-start gap-4 sm:w-[55%] md:w-[58%] lg:w-auto">
           <h2 className="text-[10px] font-bold text-[#C2F800] sm:text-[11px]"> WORKOUT LIBRARY</h2>
-          <h1 className="font-oswald font-bold leading-[1.05] text-white text-[32px] sm:text-[34px] md:text-[40px] lg:text-[45px]" >
+          <h1 className="font-oswald font-bold leading-[1.05] text-white text-[28px] sm:text-[34px] md:text-[40px] lg:text-[45px]" >
             TRAIN WITH INTENT. LOG <br /> EVERY SET.</h1>
           <p className=" max-w-full text-[11px] leading-5 text-[#9CA3AF] sm:max-w-90 md:max-w-105 lg:max-w-120  lg:text-[12px] ">
             FitLog is a dark, no-nonsense gym companion: pick a lift, lock it
